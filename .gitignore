@@ -1,0 +1,13 @@
+# Binaries
+*.exe
+*.out
+*.o
+
+# Node modules (JS)
+node_modules/
+
+# IDE files (VSCode)
+.vscode/
+
+# Logs
+*.log
