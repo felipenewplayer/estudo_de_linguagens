@@ -1,36 +1,100 @@
 #include <iostream>
-using namespace std;
 #include <vector>
+using namespace std;
+
+// Struct se declara fora do main
+struct Pessoa
+{
+    string nome;
+    int idade;
+};
+
+void adicionarPessoa(vector<Pessoa> &pessoas)
+{
+    cout << "Adicionar uma Pessoa \n";
+    Pessoa novaPessoas;
+    cout << "Digite um nome: \n";
+    cin >> novaPessoas.nome;
+    cout << "Digite uma idade: \n";
+    cin >> novaPessoas.idade;
+    pessoas.push_back(novaPessoas);
+}
+void mostrarPessoa(const vector<Pessoa> &pessoas)
+{
+    cout << "Lista das pessoas \n";
+    for (int i = 0; i < pessoas.size(); i++)
+    {
+        cout << "Nome" << pessoas[i].nome << " --- " << pessoas[i].idade << endl;
+    }
+}
+
+void editarPessoa(vector<Pessoa> &pessoas)
+{
+    cout << "Editar as pessoas\n";
+    if (pessoas.empty())
+    {
+        cout << "Não tem pessoas cadastradas\n";
+        return;
+    }
+    cout << "Digite o nome da pessoa: ";
+    string nome;
+    cin >> nome;
+    bool encontrado = false;
+
+    for (int i = 0; i < pessoas.size(); i++)
+    {
+        if (pessoas[i].nome == nome)
+        {
+            cout << "Digite um novo nome: ";
+            cin >> pessoas[i].nome;
+            cout << "Digite uma nova idade: ";
+            cin >> pessoas[i].idade;
+
+            encontrado = true;
+            break;
+        }
+    }
+    if (!encontrado)
+    {
+        cout << "Nome não encontrado\n";
+    }
+}
+
+void excluirPessoa(vector<Pessoa> &pessoas)
+{
+    cout << "Excluir as pessoas \n";
+    if (pessoas.empty())
+    {
+        cout << "Nome não encontrado";
+    }
+    cout << "Digite o nome da pessoa: ";
+    string nome;
+    cin >> nome;
+    bool encontrado = false;
+
+    for (int i = 0; i < pessoas.size(); i++)
+    {
+        if (pessoas[i].nome == nome)
+        {
+            string nomeExcluido = pessoas[i].nome;
+            pessoas.erase(pessoas.begin() + i);
+            cout << nomeExcluido << " excluido \n";
+            encontrado = true;
+            break;
+        }
+    }
+    if (!encontrado)
+    {
+        cout << "Nome não encontrado\n";
+    }
+}
 int main()
 {
-
-    struct Pessoa
-    {
-        string nome;
-        float altura;
-    };
-
-    Pessoa p1;
-    cout << "Digite um nome \n";
-    cin >> p1.nome;
-    cout << "Digite a altura \n";
-    cin >> p1.altura;
-
-    cout << p1.nome << endl;
-    cout << p1.altura;
-
     vector<Pessoa> pessoas;
-    Pessoa p2 = {"Raimundo", 1.40f};
-    Pessoa p3 = {"Leao", 1.60f};
-    pessoas.push_back(p2);
-    pessoas.push_back(p3);
-
-    for (Pessoa p : pessoas)
-    {
-        cout << "Nome " << p.nome << " Altura: " << p.altura << endl;
-    }
-
-    int x = 16 * 16;
-    cout << x << endl;
+    adicionarPessoa(pessoas);
+    mostrarPessoa(pessoas);
+    editarPessoa(pessoas);
+    excluirPessoa(pessoas);
+    mostrarPessoa(pessoas);
     return 0;
 }
