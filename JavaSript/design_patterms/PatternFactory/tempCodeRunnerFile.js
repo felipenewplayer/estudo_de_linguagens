@@ -1,0 +1,1 @@
+console.log(c1.calcularBonus()); // 5000

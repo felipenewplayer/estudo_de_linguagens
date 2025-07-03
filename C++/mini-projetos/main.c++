@@ -141,7 +141,7 @@ int main()
         cout << "3. Editar Cliente\n";
         cout << "4. Excluir Cliente\n";
         cout << "5. Sair\n";
-        cout << "Digite uma opção: ";
+        cout << "Digite uma opcao: ";
 
         cin >> opcao;
         cout << endl;
