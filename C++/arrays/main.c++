@@ -116,7 +116,7 @@ int main()
     sort(v.begin(), v.end());
     for(int n: v){
         cout << n << "\n";
-    }
+    }   
     
 
     return 0;
