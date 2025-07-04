@@ -19,17 +19,16 @@ int main()
     // Não tem .size() ou métodos úteis
     // Cuidado com índices fora do limite
 
-
     // Arryay modernos
     //  Sem valores iniciais
     vector<int> valores;
 
-    //Adicionando
+    // Adicionando
     valores.push_back(10);
     valores.push_back(20);
     valores.push_back(30);
 
-    //Removendo o ultimo
+    // Removendo o ultimo
     valores.pop_back();
 
     // Acessando primeiro número
@@ -114,10 +113,42 @@ int main()
     cout << "O menor numero do array eh " << menor << "\n";
 
     sort(v.begin(), v.end());
-    for(int n: v){
+    for (int n : v)
+    {
         cout << n << "\n";
-    }   
-    
+    }
 
+    const int totalAlunos = 10;
+    vector<float> notas;
+
+    float somaa = 0;
+
+    for (int i = 0; i < totalAlunos; i++)
+    {
+        float nota;
+        cout << "Digite a nota do aluno:" << i + 1 << endl;
+        cin >> nota;
+        notas.push_back(nota);
+        somaa += nota;
+    }
+
+    float media = somaa / totalAlunos;
+    cout << "\n A media da turma eh " << media << endl;
+
+    int acima = 0, abaixo = 0;
+
+    for (int i = 0; i < totalAlunos; i++)
+    {
+        if (notas[i] > media)
+        {
+            acima++;
+        }
+        else if (notas[i] < media)
+        {
+            abaixo++;
+        }
+    }
+    cout << "Alunos acima da média: " << acima << endl;
+    cout << "Alunos abaixo da média: " << abaixo << endl;
     return 0;
-}
+}   

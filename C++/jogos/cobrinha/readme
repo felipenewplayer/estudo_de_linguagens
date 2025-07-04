@@ -1,0 +1,15 @@
+# início:
+#   cria cobra no centro
+#   cria comida aleatória
+
+# loop:
+#   captura tecla (direção)
+#   move cabeça
+#   move corpo
+#   se comeu comida:
+#     cresce cobra
+#     cria nova comida
+#   se bateu na parede ou corpo:
+#     fim do jogo
+#   desenha o tabuleiro
+#   repete
