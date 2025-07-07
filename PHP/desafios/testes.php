@@ -1,77 +1,24 @@
-    <?php
+<?php
+$notas = [
+    "Ana" => 7.5,
+    "João" => 8.0,
+    "Carlos" => 6.5
+];
 
-    //Devolver números pares
-    $numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+$soma = array_reduce($notas, function($somar, $nota){
+    return $somar + $nota;
+}, 0);
 
-    function apenasPares($numeros)
-    {
-        foreach ($numeros as $n) {
-            if ($n % 2 === 0) {
-                echo  $n . "\n";
-            }
-        }
-    }
+print_r($soma);
 
-    apenasPares($numeros);
+$nome = array_map(function($nota){
+    return $nota[1];
+}, $notas);
 
-    //Verificar Se nome está na lista 
+print_r($nome);
 
-    $nomes = ["Felipe", "Maria", "João"];
-    function temNome($nomes)
-    {
-        $maria = "Maria";
-        $temMAria = in_array($maria, $nomes) ? "Sim" : "Não";
-        echo $temMAria . "\n";
-    }
-    temNome($nomes);
+$ana = array_filter($notas, function($nome){
+    return $nome === "Ana";
+},ARRAY_FILTER_USE_BOTH);
 
-
-
-    //Somar todos os valores 
-
-    $valores = [2, 6, 8];
-    $valoresSomados = array_sum($valores);
-    print $valoresSomados;
-
-    //Dobrar valores
-
-    $dobrar = array_map(function ($v) {
-        return $v * 2;
-    }, $valores);
-
-    print_r($dobrar);
-
-
-    // Filtrar produtos com preco maiores que 100
-    $produtos = [
-        ["nome" => "Teclado", "preco" => 120],
-        ["nome" => "Mouse", "preco" => 80]
-    ];
-
-    function manipularLista($produtos)
-    {
-        print_r(array_filter($produtos, function ($n) {
-            return $n["preco"] > 100;
-        }));
-    }
-
-    manipularLista($produtos);
-
-
-    function apenasNomes($produtos)
-    {
-        print_r(array_map(function ($p) {
-            return $p["nome"];
-        }, $produtos));
-    }
-
-    apenasNomes($produtos);
-
-
-    function somarPrecos($produtos)
-    {
-        print_r(array_reduce($produtos, function ($carry, $item) {
-            return $carry + $item["preco"];
-        }, 0));
-    }
-    somarPrecos($produtos);
+print_r($ana);
