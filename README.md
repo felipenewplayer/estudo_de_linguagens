@@ -8,8 +8,7 @@ Este repositório reúne códigos de estudos e exemplos em várias linguagens: C
 - `CPP/` - C++
 - `PHP/` - PHP básico e projetos
 - `JS/` - JavaScript e React (futuro)
-
-## Como usar
+- `TS/` - TypeScript
 
 
 Sinta-se à vontade para abrir issues, sugerir melhorias ou enviar PRs.
