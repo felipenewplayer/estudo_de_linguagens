@@ -1,78 +1,40 @@
 #include <stdio.h>
-#include <stdbool.h>
-#include <math.h>
+#include <string.h>
 
-int soma(int a, int b) {
-    return a + b;
-}
+void mostrarDados() {
+    char nome[30];  
+    int idade;
+    float peso;
+    char string[100];
 
-int fatorial(int n) {
-    int resultado = 1;
-    for (int i = 1; i <= n; i++) {
-        resultado *= i;
-    }
-    return resultado;
-}
+    printf("Digite seu nome: ");
+    fgets(nome, sizeof(nome), stdin);
+    nome[strcspn(nome, "\n")] = '\0'; 
 
-bool ehPrimo(int n) {
-    if (n <= 1) return false;
-    for (int i = 2; i <= sqrt(n); i++) {
-        if (n % i == 0) return false;
-    }
-    return true;
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+
+    printf("Digite seu peso: ");
+    scanf("%f", &peso);
+
+    sprintf(string, "Seu nome é %s\nVocê tem %d anos de vida\nSeu peso é %.2f", nome, idade, peso);
+    printf("%s\n", string);
 }
 
 int main() {
-    int idade;
-    printf("Digite uma idade: ");
-    scanf("%d", &idade);
-    printf("Você digitou: %d\n", idade);
+    int numero = 11;
+    float altura = 10.1;
+    double salario = 4500.00;
+    char string[100];
 
-    int numero;
-    printf("Digite um número: ");
-    scanf("%d", &numero);
+    printf("%d\n", numero);
+    printf("%.2f\n", altura);
+    printf("%.2lf\n", salario);
 
-    if (numero > 0) {
-        printf("Positivo\n");
-    } else if (numero < 0) {
-        printf("Negativo\n");
-    } else {
-        printf("Zero\n");
-    }
+    sprintf(string, "Idade: %d\nAltura: %.2f\nSalario: %.2lf\n", numero, altura, salario);
+    printf("%s\n", string);
 
-    for (int i = 0; i <= 10; i++) {
-        printf("%d X %d = %d\n", i, numero, i * numero);
-    }
-
-    int j = 0;
-    do {
-        printf("j = %d\n", j);
-        j++;
-    } while (j < 5);
-
-    int numbera, numberb;
-    printf("Digite dois números: ");
-    scanf("%d %d", &numbera, &numberb);
-
-    int resultado = soma(numbera, numberb);
-    printf("Soma: %d\n", resultado);
-
-    int numberc;
-    printf("Digite um número para calcular o fatorial: ");
-    scanf("%d", &numberc);
-
-    int resultadoFatorial = fatorial(numberc);
-    printf("Fatorial de %d é %d\n", numberc, resultadoFatorial);
-
-    int numberd;
-    printf("Digite um número para verificar se é primo: ");
-    scanf("%d", &numberd);
-
-    if (ehPrimo(numberd)) {
-        printf("%d é um número primo.\n", numberd);
-    } else {
-        printf("%d não é um número primo.\n", numberd);
-    }
+    mostrarDados();
 
     return 0;
 }
