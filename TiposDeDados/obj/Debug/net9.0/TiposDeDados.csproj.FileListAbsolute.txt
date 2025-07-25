@@ -1,0 +1,15 @@
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\bin\Debug\net9.0\TiposDeDados.exe
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\bin\Debug\net9.0\TiposDeDados.deps.json
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\bin\Debug\net9.0\TiposDeDados.runtimeconfig.json
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\bin\Debug\net9.0\TiposDeDados.dll
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\bin\Debug\net9.0\TiposDeDados.pdb
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\obj\Debug\net9.0\TiposDeDados.GeneratedMSBuildEditorConfig.editorconfig
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\obj\Debug\net9.0\TiposDeDados.AssemblyInfoInputs.cache
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\obj\Debug\net9.0\TiposDeDados.AssemblyInfo.cs
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\obj\Debug\net9.0\TiposDeDados.csproj.CoreCompileInputs.cache
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\obj\Debug\net9.0\TiposDeDados.sourcelink.json
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\obj\Debug\net9.0\TiposDeDados.dll
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\obj\Debug\net9.0\refint\TiposDeDados.dll
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\obj\Debug\net9.0\TiposDeDados.pdb
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\obj\Debug\net9.0\TiposDeDados.genruntimeconfig.cache
+C:\BasicoCadaLinguagem\EstudoEmTodas\TiposDeDados\obj\Debug\net9.0\ref\TiposDeDados.dll
