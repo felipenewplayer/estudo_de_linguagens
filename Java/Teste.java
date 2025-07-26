@@ -1,5 +1,6 @@
-import java.util.HashMap;
+
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Teste {
@@ -43,7 +44,6 @@ public class Teste {
         }
         System.out.printf("Fatorial de %d é %d\n", numero, resultado);
     }
-
     static  void verificarSeEPalindromo(String nome){
         String nomeReverso = new StringBuilder(nome).reverse().toString();
         if(nomeReverso.equals(nome)){
@@ -54,15 +54,11 @@ public class Teste {
     }
 
     static void quantasVezesApareceApalavra(List<String>nomes){
-        var contagem  = new HashMap<String, Integer>();
-        for(String nome : nomes){
-            contagem.put(nome, contagem.getOrDefault(nome, 0) + 1);
-        }
+        Map<String, Long> contagem = nomes.stream()
+                .collect(Collectors.groupingBy(n -> n, Collectors.counting()));
 
-        for (var entrada : contagem.entrySet()) {
-            System.out.printf("Nome: %s → %d vez(es)\n", entrada.getKey(), entrada.getValue());
-        }
-
+        contagem.forEach((nome, qtd) ->
+                System.out.printf("Nome: %s -> %d vez(es)\n",nome,qtd));
     }
 
     static void dobrarNumeros(List<Integer>numeros){
@@ -70,7 +66,6 @@ public class Teste {
                 .stream()
                 .map(n -> n * 2)
                 .collect(Collectors.toList());
-
         System.out.println(numerosDobrados);
     }
 
@@ -82,7 +77,36 @@ public class Teste {
         System.out.println(numerosFiltrados);
     }
 
+    static  void maiorMenorEMediaNumero(List<Integer>lista){
+        int maior = lista.stream().max(Integer::compare)
+                .orElseThrow();
 
+        int menor = lista.stream().min(Integer::compare).orElseThrow();
+
+        int soma = lista.stream().mapToInt(n -> n).sum();
+        double media = (double) soma / lista.size();
+        System.out.printf("Maior número é: %d\n", maior);
+        System.out.printf("Menor número é: %d\n", menor);
+        System.out.printf("Media dos número é: %f\n", media);
+    }
+
+    static void nomesComF(List<String> nomes){
+       List<String> filtrado =  nomes.stream()
+               .filter(n -> n.startsWith("F"))
+               .map(String::toUpperCase)
+               .toList();
+        System.out.println(filtrado);
+    }
+
+        static void agruparNomesPorTamanho(List<String> nomes){
+        Map<Character, List<String>>agrupado = nomes
+                .stream()
+                .filter(n -> !n.isEmpty())
+                .collect(Collectors.groupingBy(n -> n.charAt(0)));
+
+        agrupado.forEach((letra, lista) ->
+                System.out.println(letra + " , "+  lista));
+        }
 
     public static void main(String[] args) {
         int numero = 7;
@@ -98,6 +122,9 @@ public class Teste {
         quantasVezesApareceApalavra(nomes);
         dobrarNumeros(numeros);
         filtrarSoPares(numeros);
+        maiorMenorEMediaNumero(numeros);
+        nomesComF(nomes);
+        agruparNomesPorTamanho(nomes);
     }
 }
 

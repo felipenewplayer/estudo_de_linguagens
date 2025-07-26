@@ -9,7 +9,6 @@ public class App {
                 .filter(n -> n % 2 == 0)
                 .mapToInt(n -> n)
                 .sum();
-
         System.out.printf("Soma dos pares das lista é : %d", soma);
     }
 
