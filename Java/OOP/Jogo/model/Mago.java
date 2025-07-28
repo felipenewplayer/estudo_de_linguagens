@@ -1,6 +1,6 @@
-package OOP.Jogo;
+package OOP.Jogo.model;
 
-public class Mago extends Personagem{
+public class Mago extends Personagem {
     private final int inteligencia;
     public Mago(String nome, int forca, int inteligencia) {
         super(nome, forca);
@@ -11,6 +11,8 @@ public class Mago extends Personagem{
         return inteligencia;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Nome: " + getNome() + " | " +  " Força: "  + getForca()  + " | " + " Inteligência : " + getInteligencia();
+    }
 }

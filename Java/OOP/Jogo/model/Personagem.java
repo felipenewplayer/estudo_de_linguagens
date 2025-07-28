@@ -1,4 +1,4 @@
-package OOP.Jogo;
+package OOP.Jogo.model;
 
 public class Personagem {
     private String nome;
@@ -6,6 +6,7 @@ public class Personagem {
 
     public Personagem() {
     }
+
 
     public Personagem(String nome, int forca){
         this.nome = nome;

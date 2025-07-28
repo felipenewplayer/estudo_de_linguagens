@@ -1,6 +1,6 @@
-package OOP.Jogo;
+package OOP.Jogo.model;
 
-public class Guerreiro extends Personagem{
+public class Guerreiro extends Personagem {
     Armamento armamento;
 
     public Guerreiro(String nome, int forca) {
