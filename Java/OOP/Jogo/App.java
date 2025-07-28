@@ -3,6 +3,8 @@ package OOP.Jogo;
 import OOP.Jogo.controller.PersonagemController;
 import OOP.Jogo.view.MenuView;
 
+
+
 public class App { ;
 
     public static void main(String[] args) {
