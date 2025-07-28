@@ -1,9 +1,4 @@
     package OOP.Jogo.controller;
-
-
-
-
-
     import OOP.Jogo.model.Armamento;
     import OOP.Jogo.model.Guerreiro;
     import OOP.Jogo.model.Mago;

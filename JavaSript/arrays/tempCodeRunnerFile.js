@@ -1,2 +1,4 @@
 
-const tudoUpper =  pessoas.map(pessoa => pessoa.toUpp
+    console.log(palavra);
+}else{
+    return false;

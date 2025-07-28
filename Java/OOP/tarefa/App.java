@@ -1,10 +1,12 @@
-package OOP;
+package OOP.tarefa;
+import OOP.tarefa.model.Tarefa;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import static OOP.Funcoes.*;
+import static OOP.tarefa.controller.Funcoes.*;
 
 public class App {
     public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class App {
             2 - Remover tarefa
             3 - Listar tarefas
             4- Marcar tarefa como concluída
-            5 - Sair        """);
+            5 - Sair""");
 
         int opcao = 0;
         while (opcao !=5){

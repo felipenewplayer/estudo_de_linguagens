@@ -1,9 +1,6 @@
 package OOP.Jogo;
-
 import OOP.Jogo.controller.PersonagemController;
 import OOP.Jogo.view.MenuView;
-
-
 
 public class App { ;
 
@@ -28,7 +25,6 @@ public class App { ;
             } catch (RuntimeException e) {
                 throw new RuntimeException(e);
             }
-
         }
     }
 }

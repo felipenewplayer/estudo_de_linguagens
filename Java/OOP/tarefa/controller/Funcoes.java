@@ -1,4 +1,7 @@
-package OOP;
+package OOP.tarefa.controller;
+
+import OOP.tarefa.model.Status;
+import OOP.tarefa.model.Tarefa;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -15,7 +18,7 @@ public class Funcoes {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String dataStr = sc.nextLine();
         LocalDate data = LocalDate.parse(dataStr, formatter);
-        tarefa.add(new Tarefa(nome,data,Status.PENDENTE));
+        tarefa.add(new Tarefa(nome,data, Status.PENDENTE));
         System.out.println("Tarefa adicionada com sucesso!");
     }
 

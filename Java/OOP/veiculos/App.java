@@ -1,18 +1,30 @@
 package OOP.veiculos;
 
-import java.time.LocalDate;
+import OOP.veiculos.controller.VeiculoController;
+import OOP.veiculos.view.Menu;
 
 public class App {
     public static void main(String[] args) {
-        Veiculos carro = new Veiculos("Porche", "Ford", LocalDate.of(2025,01,1));
-        carro.ligar();
-        System.out.println(carro);
+        Menu menu = new Menu();
+        VeiculoController controller = new VeiculoController();
 
-        ContaBancaria ba1 = new ContaBancaria();
-        ba1.depositar(10);
-        System.out.println(ba1.getSaldo());
+        int opcao = 0;
+        while (opcao!=4){
+            try
+            {
+                opcao = menu.menuPrincipal();
+                menu.getSc().nextLine();
 
-        Cachorro rico = new Cachorro();
-        rico.comer();
+                switch (opcao){
+                    case 1 -> controller.criarCarro(menu.getSc());
+                    case 2 -> controller.criarMoto(menu.getSc());
+                    case 3 -> controller.listaDeVeiculos(menu.getSc());
+                    case 4 -> menu.exibirMensagem("Saindo...");
+                    case 5 -> menu.exibirMensagem("Opção inválida");
+                }
+            } catch (RuntimeException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

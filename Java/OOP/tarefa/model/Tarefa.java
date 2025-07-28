@@ -1,4 +1,4 @@
-package OOP;
+package OOP.tarefa.model;
 
 import java.time.LocalDate;
 

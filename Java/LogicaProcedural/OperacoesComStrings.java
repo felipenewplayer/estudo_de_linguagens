@@ -53,9 +53,6 @@ public class OperacoesComStrings {
         }
         System.out.printf("%s tem %d de vogais", minusculo, contador);
 
-
-
-
     }
 
 

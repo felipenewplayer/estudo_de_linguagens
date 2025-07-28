@@ -1,4 +1,4 @@
-package OOP.veiculos;
+package OOP.animais;
 
 public class Animal {
     public void comer(){

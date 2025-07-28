@@ -1,8 +1,9 @@
-package OOP.veiculos;
+package OOP.veiculos.model;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class Veiculos implements Acoes {
+public abstract class Veiculos {
     String nome;
     String marca;
     LocalDate ano;
@@ -36,14 +37,12 @@ public class Veiculos implements Acoes {
     public void setAno(LocalDate ano) {
         this.ano = ano;
     }
-    @Override
-    public void ligar(){
-        System.out.println("Ligando carro" + nome);
-    }
+
+    public abstract void ligar();
+    public abstract void desligar();
 
     @Override
     public String toString() {
-        return "Nome: " + nome  +  " | " + "Marca: " + marca + " | " + "Ano: " + ano ;
+        return "Nome: " + nome  +  " | " + "Marca: " + marca + " | " + "Ano: " + ano.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) ;
     }
-
 }

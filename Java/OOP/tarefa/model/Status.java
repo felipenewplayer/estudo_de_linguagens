@@ -1,4 +1,4 @@
-package OOP;
+package OOP.tarefa.model;
 
 public enum Status {
     CONCLUIDO(1),
