@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Menu {
             Scanner sc = new Scanner(System.in);
-
             public int menuPrincipal(){
                 System.out.println("""
                 **** Seja Bem-vindo ****

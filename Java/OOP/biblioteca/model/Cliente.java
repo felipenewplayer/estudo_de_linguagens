@@ -2,8 +2,9 @@ package OOP.biblioteca.model;
 
 public class Cliente extends Usuario{
     private int numberAccess;
-    public Cliente(String nome, int idade, int numberAccess) {
-        super(nome, idade);
+
+    public Cliente(String nome, int idade, int senha, int numberAccess) {
+        super(nome, idade, senha);
         this.numberAccess = numberAccess;
     }
 

@@ -3,14 +3,14 @@ const somaDosPares = numeros.filter(n => n % 2 === 0).reduce((acc, n) => acc + n
 console.log("Soma dos pares: " + somaDosPares);
 const linguagens = ["Java", "JS", "Java", "Python", "Java"];
 let contador = 0;
-for(let linguagem of linguagens){
-    if(linguagem === "Java"){
-        contador++;
-    }
+for (let linguagem of linguagens) {
+  if (linguagem === "Java") {
+    contador++;
+  }
 }
 console.log(contador);
 
-console.log(linguagens.reduce((acc, linguagem) => linguagem === "Java"? acc+1 : acc,0));
+console.log(linguagens.reduce((acc, linguagem) => linguagem === "Java" ? acc + 1 : acc, 0));
 
 
 const produtos = [
@@ -20,10 +20,10 @@ const produtos = [
 ];
 
 const agrupar = produtos.reduce((acc, produto) => {
-    const categoria = produto?.categoria??"Sem categoria";
-    if(!acc[categoria]) acc[categoria] = [];
-    acc[categoria].push(produto.nome);
-    return acc;
+  const categoria = produto?.categoria ?? "Sem categoria";
+  if (!acc[categoria]) acc[categoria] = [];
+  acc[categoria].push(produto.nome);
+  return acc;
 }, {})
 
 console.log(agrupar);
@@ -39,19 +39,28 @@ const carrinho = [
   { produto: "Lápis", preco: 3 },
 ];
 
-const totalPreco = carrinho.reduce((acc, produto)=> acc + produto.preco, 0);
-console.log(`Total de preços do carrinho : R$ ${totalPreco.toLocaleString("pt-BR", {minimumFractionDigits:2})}`);
+const totalPreco = carrinho.reduce((acc, produto) => acc + produto.preco, 0);
+console.log(`Total de preços do carrinho : R$ ${totalPreco.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`);
 
 
 
-const numero = '2' ;
-console.log(typeof(numero));
-console.log(0 ==  "0");
+const numero = '2';
+console.log(typeof (numero));
+console.log(0 == "0");
 console.log(0 === false);
 
 let x = "5";
 let y = 2;
-let z = x + y; 
+let z = x + y;
 console.log(z);
 
 
+console.log('1' + '1');
+console.log(1 + 1);
+
+
+
+
+
+
+ehprimo(333);

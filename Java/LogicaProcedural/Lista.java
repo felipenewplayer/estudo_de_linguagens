@@ -42,5 +42,9 @@ public class Lista {
 
         int tamanho = tarefas.size();
         System.out.printf("Existe %d tarefas lista", tamanho);
+
+        int n = 1;
+        int n2 = 10;
+        System.out.println(Math.max(n, n2));
     }
 }
