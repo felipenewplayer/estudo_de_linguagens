@@ -1,6 +1,6 @@
 package OOP.biblioteca.model;
 
-public class Cliente extends Usuario{
+public class Cliente extends Usuario {
     private int numberAccess;
 
     public Cliente(String nome, int idade, int senha, int numberAccess) {
@@ -8,12 +8,20 @@ public class Cliente extends Usuario{
         this.numberAccess = numberAccess;
     }
 
-    public int setNumAccess(int numberAccess){
+    public Cliente() {
+
+    }
+
+    public int getNumberAccess() {
         return numberAccess;
+    }
+
+    public void setNumberAccess(int numberAccess) {
+        this.numberAccess = numberAccess;
     }
 
     @Override
     public String toString() {
-        return "Nome: " + getNome()  + " | " + getIdade() + " | " + "Número de acesso" + " | " + numberAccess;
+        return "Nome: " + getNome()  + " | " + getIdade() + " | Número de acesso: " + numberAccess;
     }
 }

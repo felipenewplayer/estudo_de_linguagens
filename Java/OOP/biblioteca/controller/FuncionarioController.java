@@ -1,6 +1,7 @@
 package OOP.biblioteca.controller;
 
 
+import OOP.biblioteca.dao.ClienteDao;
 import OOP.biblioteca.model.Cliente;
 import OOP.biblioteca.model.Livros;
 import OOP.biblioteca.model.Usuario;
@@ -11,7 +12,7 @@ public class FuncionarioController {
 
     private  SistemaDeUsuarios sistema;
     private  SistemaDeLivros sistemaDeLivros;
-
+    private ClienteDao clienteDao = new ClienteDao();
     public FuncionarioController(SistemaDeUsuarios sistema, SistemaDeLivros sistemaDeLivros) {
         this.sistema = sistema;
         this.sistemaDeLivros = sistemaDeLivros;
@@ -61,16 +62,17 @@ public class FuncionarioController {
         int numeroDeAcesso = sc.nextInt();
         Cliente c = new Cliente(nome, idade,senha, numeroDeAcesso);
         sistema.adicionarUsuario(c);
+        clienteDao.salvar(c);
         System.out.println("Cliente adicionado com sucesso!");
     }
 
     public void listaDeClientes(){
         System.out.println("*** Lista de Clientes ***");
         System.out.println("*************************");
-        if(sistema.getUsuarios().isEmpty()){
+        if(clienteDao.listarTodos().isEmpty()){
             System.out.println("Nenhum cliente adicionado!");
         }else {
-            for(Usuario usuario : sistema.getUsuarios()){
+            for(Usuario usuario : clienteDao.listarTodos()){
                 System.out.println(usuario);
             }
         }

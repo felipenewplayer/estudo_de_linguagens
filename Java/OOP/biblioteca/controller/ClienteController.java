@@ -28,7 +28,6 @@ public class ClienteController {
         for (Usuario usuario : sistema.getUsuarios()){
             if(usuario.getNome().equalsIgnoreCase(nome) && usuario.getSenha() == senha){
                 encontrou =true;
-                processo(sc);
                 break;
             }
         }
@@ -57,9 +56,16 @@ public class ClienteController {
     }
 
     public void pegarUmLivro(Scanner sc){
-        for(Livros livros : sistemaDeLivros.getLivros()){
-            System.out.println(livros);
+        System.out.println("***** Pegar um Livro");
+        if(sistemaDeLivros.getLivros().isEmpty()){
+            System.out.println("Lista de livros está vázia!");
+            return;
+        }else {
+                for(Livros livros : sistemaDeLivros.getLivros()){
+                    System.out.println(livros);
+                }
         }
+
     }
     public void  devolverUmLivro(Scanner sc){}
 }
