@@ -31,8 +31,6 @@ public class Numbers {
         double numeroDeEuler = Math.E;
         System.out.print("Número de Euler: " +  numeroDeEuler);
 
-
-
         sc.close();
 
 
