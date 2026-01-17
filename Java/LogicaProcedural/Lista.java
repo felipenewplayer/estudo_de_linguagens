@@ -8,15 +8,16 @@ public class Lista {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         List<String>tarefas = new ArrayList<>();
+
         while (true){
-            System.out.println("Adicione um nova tarefa (digite 'sair' para parar!)");
+            System.out.println("Adicione um nova tarefa ou (digite 'sair' para parar!)");
             String novaTarefa = sc.nextLine();
             if(novaTarefa.equalsIgnoreCase("sair"))break;
             tarefas.add(novaTarefa);
-        }
 
-        System.out.println(tarefas);
-        System.out.println("Remover Tarefa!");
+
+        System.out.printf("\n**** Lista de tarefas ****\n", tarefas);
+        System.out.println("Digite o nome da uma tarefa para remover !");
         String tarefaRemovida = sc.nextLine();
         for(int i = 0 ; i < tarefas.size(); i ++){
             if(tarefas.isEmpty()  ){
@@ -31,7 +32,6 @@ public class Lista {
                 System.out.println("Tarefa Removida com sucesso!");
             }
         }
-
         System.out.println("Verificar se tem a tarefa na lista: Digite o nome:");
         String tarefaExisente = sc.nextLine();
         if(!tarefas.contains(tarefaExisente)) {
@@ -41,10 +41,10 @@ public class Lista {
         }
 
         int tamanho = tarefas.size();
-        System.out.printf("Existe %d tarefas lista", tamanho);
+        System.out.printf("Existe %d tarefas lista: ", tamanho);
 
         int n = 1;
         int n2 = 10;
         System.out.println(Math.max(n, n2));
-    }
+    }}
 }
